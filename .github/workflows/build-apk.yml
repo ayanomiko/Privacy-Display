@@ -24,6 +24,8 @@ jobs:
         run: ionic build --prod
       - name: Sync
         run: npx cap sync android
+      - name: Grant gradlew permission
+        run: chmod +x android/gradlew
       - name: Build APK
         run: cd android && ./gradlew assembleDebug
       - name: Upload APK
